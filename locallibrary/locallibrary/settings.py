@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # New Apps Added
+    # 28th Jul 2024
+    'catalog.apps.CatalogConfig', # This object was created for us in /catalog/apps.py 
 ]
 
 MIDDLEWARE = [
@@ -77,7 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
+
 }
 
 
