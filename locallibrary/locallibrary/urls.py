@@ -20,3 +20,17 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+# use include() to add paths from the catalog application
+from django.urls import include
+
+urlpatterns += [
+    path('catalog/', include('catalog.urls')),
+],
+
+# add URL Maps to redirect the base URL to our application
+from django.views.generic import RedirectView
+urlpatterns += [
+    path('', RedirectView.as_view(url='catalog/', permanent=True)),
+]
+
